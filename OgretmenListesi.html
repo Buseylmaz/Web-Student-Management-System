@@ -1,0 +1,61 @@
+﻿<body>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Ögretmen Adı">
+    <script>
+        function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("table");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+    <table class="table" id="table">
+        <tr>
+            <th>Ögretmen Adı</th>
+            <th>Telefon Numarası</th>
+            <th>TC</th>
+            <th>Mail</th>
+            <th ng-style="disableTagButton12">Şifre</th>
+
+            <th>İşlemler</th>
+        </tr>
+        <tr ng-repeat="x in ogretmenler">
+
+            <td>{{x.OgretmenAdi}}</td>
+            <td>{{x.TelefonNumarasi}}</td>
+            <td>{{x.TC}}</td>
+            <td>{{x.Mail}}</td>
+            <td>{{x.Sifre}}</td>
+            <td>
+                <button class="btn btn-danger" ng-click="OgretmenKayitSil(x.TID)"> Kayıt SİL</button>
+                <button ng-style="disableTagButton1" class="btn btn-success" ng-click="OgretmenGuncelle(x)">Güncelle</button>
+            </td>
+        </tr>
+    </table><hr />
+
+    <table>
+        <button ng-style="disableTagButton" class="btn btn-success" onClick="location.href='/OgretmenListesiForm.aspx'">Ögretmen Kayıt Formuna Yönlendirileceksiniz</button>
+    </table>
+
+    <input ng-style="disableTagButton6" type="text" ng-model="Teacher.OgretmenAdi" placeholder="Ogretmen Adi" /><br />
+    <input ng-style="disableTagButton7" type="text" ng-model="Teacher.TelefonNumarasi" placeholder="Telefon Numarasi" /><br />
+    <input ng-style="disableTagButton8" type="text" ng-model="Teacher.TC" placeholder="TC" /><br />
+    <input ng-style="disableTagButton9" type="text" ng-model="Teacher.Mail" placeholder="Mail" /><br />
+    <input ng-style="disableTagButton10" type="text" ng-model="Teacher.Sifre" placeholder="Sifre" /><br />
+    <button ng-style="disableTagButton11" ng-click="Guncelle(Teacher)">Güncelle</button>
+
+</body>

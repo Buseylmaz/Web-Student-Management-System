@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script><!--Angularjs baglantısı-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script> <!--Route paketi dahi ettim-->
+    <script src="Ogrenci_ng.js"></script>
+    <link href="Menu.css" rel="stylesheet" />
+
+</head>
+
+<body ng-app="OgrenciApp">
+    <div class="col-md-2 ">
+        <h1>MENÜ</h1>
+        <br />
+        <a href="#!DersListesi">Ders Listesi</a><br />
+        <a href="#!Derslerim">Derslerim</a><br />
+        <a href="#!Not">Not</a><br />
+        <a href="#!PaylasilanIcerik">Duyurular</a><br />
+       
+
+    </div>
+
+    <div class="col-md-10">
+        <div ng-view=""></div> <!--İçerigin görülmesini istedigimiz yer,sayfanın degişmesi gereken yeri menu kısmı sabit kalıcak-->
+    </div>
+    
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background: #c7b198;
+    height: 100vh;
+    background-size: 100% 100%;
+}
+
+a, h2 {
+    color: #f6f1ed;
+}
+
+.container .navbar {
+    height: 80px;
+    weight: 100%;
+    background: #30231d;
+}
+
+.navbar ul {
+    float: right;
+    margin-right: 20px;
+}
+
+    .navbar ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 8px;
+        margin-top: 30px;
+    }
+
+        .navbar ul li a {
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+.navbar .title {
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.container .center {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+}
+
+.buttons button {
+    color: b5a397;
+    height: 100px;
+    size: 150px;
+    font-size: 18px;
+}

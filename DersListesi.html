@@ -1,0 +1,74 @@
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="DersListesi.css">  
+</head>
+<body>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Ders Adı">
+    <script>
+        function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("table");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+    <table class="table" id="table">
+        <tr>
+            <th>Dersin Adı</th>
+            <th>Ogretmen Adı</th>
+            <th>Dersin İçeriği</th>
+            <th>Dersin Kredisi</th>
+            <th>Dersin AKTS</th>
+
+            <th>İşlemler</th>
+        </tr>
+        <tr ng-repeat="x in dersler">
+            <td>{{x.DersAdi}}</td>
+            <td>{{x.OgretmenAdi}}</td>
+            <td>{{x.DersIcerik}}</td>
+            <td>{{x.DersKredi}}</td>
+            <td>{{x.DersAKTS}}</td>
+            <td>
+                <button ng-style="disableTagButton4" class="btn btn-danger" ng-click="DerslerimeKaydet(x.MID)">Derslerime Kaydet</button>
+                <button ng-style="disableTagButton2" class="btn btn-danger" ng-click="DersSil(x.CID)">Ders Sil</button>
+                <button ng-style="disableTagButton3" class="btn btn-success" ng-click="DersiAlanOgrenciler(x.CID)">Dersi Alan Ögrenciler</button>
+                <button ng-style="disableTagButton5" class="btn btn-success" ng-click="DersGuncelle(x)">Güncelle</button>
+
+            </td>
+
+        </tr>
+    </table><hr />
+    <table>
+        <button ng-style="disableTagButton" class="btn btn-success" onClick="location.href='DersListesiForm.aspx'">Ders Kayıt Sayfasına Yönlendirileceksiniz</button>
+    </table>
+
+    <input ng-style="disableTagButton6" type="text" ng-model="Course.DersAdi" placeholder="Ders Adi" /><br />
+    <input ng-style="disableTagButton7" type="text" ng-model="Course.OgretmenAdi" placeholder="Öğretmen Adi" /><br />
+    <input ng-style="disableTagButton8" type="text" ng-model="Course.DersIcerik" placeholder="Ders İçerik" /><br />
+    <input ng-style="disableTagButton9" type="text" ng-model="Course.DersKredi" placeholder="Ders Kredi" /><br />
+    <input ng-style="disableTagButton10" type="text" ng-model="Course.DersAKTS" placeholder="AKTS" /><br />
+    <button ng-style="disableTagButton11" ng-click="Guncelle(Course)">Güncelle</button>
+
+
+</body>
+
+  
+   
+
+
+
+

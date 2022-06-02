@@ -1,0 +1,62 @@
+﻿* {
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+.container {
+    background: #c7b198;
+    height: 100vh;
+    background-size: 100% 100%;
+}
+
+h2 {
+    color: #f6f1ed;
+}
+
+.container .navbar {
+    height: 80px;
+    weight: 100%;
+    background: #30231d;
+}
+.imgUrlText {
+    font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+    font-size: 12px;
+    font-style: italic;
+    font-variant: normal;
+    font-weight: bold;
+    margin: 0 auto;
+    display: block;
+    width: 500px;
+}
+
+
+.navbar .titlee {
+    display: inline-block;
+    margin: 0 8px;
+    margin-top: 30px;
+}
+
+.center {
+    height: 189%;
+    width: 100%;
+}
+
+
+.Text {
+    text-align:center;
+    left: 50%;
+    top: 50%;
+    
+
+   
+}
+
+.buttons {
+    left: 50%;
+    top: 50%;
+   
+    text-align: center;
+    line-height: 50px;
+}

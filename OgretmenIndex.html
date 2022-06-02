@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script> 
+    <script src="Ogretmen_ng.js"></script>
+    <link href="Menu.css" rel="stylesheet" />
+   
+
+
+</head>
+
+<body ng-app="OgretmenApp">
+    <div class="col-md-2">
+        <h1>MENÜ</h1>
+        <br />
+        <a href="#!DersListesi">Ders Listesi</a><br />
+        <a href="#!OgrencilerinListesi">Ögrenci Listesi</a><br />
+        <a href="#!Not">Not Listesi</a><br />
+        <a href="#!PaylasilanIcerik">Duyurular</a>
+    </div>
+
+    <div class="col-md-10">
+        <div ng-view=""></div> 
+    </div>
+</body>
+</html>

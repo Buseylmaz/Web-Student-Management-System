@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bbef2e8654a54d03aa55e150af816822" Name="Diagram1">
+        <EntityTypeShape EntityType="StudentManagementSystemModel.Admin" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentManagementSystemModel.Course" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentManagementSystemModel.Note" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentManagementSystemModel.Student" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentManagementSystemModel.StudentCourse" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentManagementSystemModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentManagementSystemModel.Teacher" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="StudentManagementSystemModel.FK_Teacher_Admin" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentManagementSystemModel.FK_StudentCourse_Course" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentManagementSystemModel.FK_Note_StudentCourse1" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentManagementSystemModel.FK_StudentCourse_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentManagementSystemModel.FK_StudentCourse_Teacher" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

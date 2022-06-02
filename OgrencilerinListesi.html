@@ -1,0 +1,70 @@
+﻿<body>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Ögrenci Numarası">
+    <script>
+        function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("table");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+    <table class="table" id="table">
+        <tr>
+            <th>Numarası</th>
+            <th>Adı Soyadı</th>
+            <th>Mail</th>
+            <th>Telefon</th>
+            <th>TC</th>
+            <th>Şifre</th>
+            <th ng-style="disableTagButton3">İşlemler</th>
+        </tr>
+        <tr ng-repeat="x in ogrenciler">
+            <td>{{x.OgrenciNumarasi}}</td>
+            <td>{{x.OgrenciAdi}}</td>
+            <td>{{x.Mail}}</td>
+            <td>{{x.TelefonNumarasi}}</td>
+            <td>{{x.TC}}</td>
+            <td>{{x.Sifre}}</td>
+            <td>
+                <a href="OgrencilerinListesi.html">OgrencilerinListesi.html</a>
+                <button ng-style="disableTagButton2" class="btn btn-danger" ng-click="OgrenciSil(x.SID)">Kayıt SİL</button>
+                <button ng-style="disableTagButton1" class="btn btn-success" ng-click="OgrenciGuncelle(x)">Güncelle</button>
+            </td>
+
+
+        </tr>
+    </table><hr />
+
+
+    <table>
+        <button ng-style="disableTagButton" class="btn btn-success" onClick="location.href='/OgrencilerinListesiForm.aspx'">Ögrenci Kaydet Sayfasına Yönlendir</button>
+        <br />
+    </table>
+
+    <input ng-style="disableTagButton6" type="text" ng-model="Student.OgrenciNumarasi" placeholder="Ögrenci Numarası" /><br />
+    <input ng-style="disableTagButton7" type="text" ng-model="Student.OgrenciAdi" placeholder="Ögrenci Adı" /><br />
+    <input ng-style="disableTagButton8" type="text" ng-model="Student.Mail" placeholder="Mail" /><br />
+    <input ng-style="disableTagButton9" type="text" ng-model="Student.TelefonNumarasi" placeholder="Telefon Numarasi" /><br />
+    <input ng-style="disableTagButton10" type="text" ng-model="Student.TC" placeholder="TC" /><br />
+    <input ng-style="disableTagButton12" type="text" ng-model="Student.Sifre" placeholder="Sifre" /><br />
+    <button ng-style="disableTagButton11" ng-click="Guncelle(Student)">Güncelle</button>
+
+
+</body>
+
+
